@@ -1,6 +1,9 @@
 import { Box ,Flex,Spacer,Image, Heading,Text,useColorModeValue, Button,Divider,Icon} from '@chakra-ui/react'
-
+import  Fotter  from './FotterPage'
 import React from 'react'
+import { Products } from './ProductPage'
+
+
 
 export const LandingPage= () => {
   return (
@@ -115,6 +118,9 @@ bgSize={"790px"}
 </Box>
 <br/>
 <br/>
+
+{/* *****************************Products******************************** */}
+      <Products/>
 
 {/* ******************************Fotter****************************** */}
 
