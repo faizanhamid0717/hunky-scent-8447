@@ -5,7 +5,7 @@ import { Products } from './ProductPage'
 
 
 
-export const LandingPage= () => {
+export const HomePage= () => {
   return (
     <div>
         
@@ -120,7 +120,7 @@ bgSize={"790px"}
 <br/>
 
 {/* *****************************Products******************************** */}
-      <Products/>
+    {/* <Products/> */}
 
 {/* ******************************Fotter****************************** */}
 

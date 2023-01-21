@@ -1,11 +1,14 @@
 
-import { Search2Icon} from '@chakra-ui/icons'
+import { FiShoppingCart } from 'react-icons/fi';
+import { Search2Icon,ArrowForwardIcon } from '@chakra-ui/icons'
 import { ReactNode } from 'react';
+import { AllRoutes } from './AllRoutes';
+
 import {
   Box,
   Flex,
   Avatar,
-  Link,
+ 
   Button,
   Menu,
   MenuButton,
@@ -18,16 +21,22 @@ import {
   useColorMode,
   Center,
   Text,
-  Icons,
+  Icon,
   Input,
   InputGroup,
   InputRightAddon,
   List,
   Divider,
+  chakra,
+  Tooltip,
+  
  
 } from '@chakra-ui/react';
+
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
+// import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
+
+import { Link } from "react-router-dom";
 
 
 export default function Navbar() {
@@ -102,7 +111,25 @@ export default function Navbar() {
                   <MenuItem>My Orders</MenuItem>
                   <MenuItem> Logout</MenuItem>
                 </MenuList>
-                <Box><Text>Cart</Text> </Box>
+
+                <Box
+                label="Add to cart"
+                bg="white"
+                placement={'top'}
+                color={'gray.800'}
+                fontSize={'1.2em'}>
+                {/* <chakra.a href={'#'} display={'flex'}> */}
+
+                  <Link to="/cart">
+                  <Icon as={FiShoppingCart} h={7} w={7} alignSelf={'center'} />
+                  
+                  </Link>
+                
+                <Link to="/"> </Link>
+                
+                {/* </chakra.a> */}
+              </Box>  
+                
               </Menu>
               
             </Stack> 
@@ -113,10 +140,15 @@ export default function Navbar() {
 
       {/* **************************************Drop down nave****************************** */}
      <Divider border={"1px solid pink"}/>
+
       <Box bg={useColorModeValue('gray.50', 'gray.800')} px={4} h={12}>
       
-
-
+  <Link to="/products"> 
+  <Button rightIcon={<ArrowForwardIcon />} colorScheme='teal' variant='outline'>
+    Products For You
+  </Button>
+  </Link>
+  
 <Menu>
     <MenuButton as={Button} bg={0}>
      Women Ethnic
@@ -210,22 +242,13 @@ export default function Navbar() {
   </MenuList>
 </Menu> 
 
-<Menu> 
-  <MenuButton as={Button} bg={0}>
-   Jewellery & Accessories
-  </MenuButton>
-  <MenuList>
-    <MenuItem>Download</MenuItem>
-    <MenuItem>Create a Copy</MenuItem>
-    <MenuItem>Mark as Draft</MenuItem>
-    <MenuItem>Delete</MenuItem>
-    <MenuItem>Attend a Workshop</MenuItem>
-  </MenuList>
-</Menu>
+
 
 <Divider border={"1px solid red"}/>
       </Box>
       
+      {/* <AllRoutes/> */}
+  
     </>
   );
 }

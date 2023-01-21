@@ -10,9 +10,9 @@ import {
     chakra,
     Tooltip,
   } from '@chakra-ui/react';
-  import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
+  import { BsStar, BsStarFill, BsStarHalf ,} from 'react-icons/bs';
   import { FiShoppingCart } from 'react-icons/fi';
-  
+  import {Link} from "react-router-dom"
   const data = {
     isNew: true,
     imageURL:
@@ -23,20 +23,13 @@ import {
     numReviews: 34,
   };
   
-//   interface RatingProps {
-//     rating: number;
-//     numReviews: number;
-//   }
+
   
-//   function Rating({ rate, numReviews}) {
-//     return (
-      
-//     );
-//   }
-  
-  function ProductCart({title,price, image,category,rat}) {
+  function ProductCart({title,price, image,category,rat,id}) {
+
     return (
-       
+       <Link to={`/products/${id}`}>
+
       <Flex p={3} w="full" alignItems="center" justifyContent="center" >
         <Box
           bg={useColorModeValue('white', 'gray.800')}
@@ -67,7 +60,7 @@ import {
           <Box p="6">
             <Box d="flex" alignItems="baseline">
               {data.isNew && (
-                <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="green">
+                <Badge rounded="full" px="5" fontSize="0.8em" colorScheme="green" mb={"10px"}>
                  {category}
                 </Badge>
               )}
@@ -75,7 +68,7 @@ import {
             <Flex mt="1" justifyContent="space-between" alignContent="center">
               <Box
                 fontSize="m"
-                color={useColorModeValue('gray.500', 'gray.800')}
+                color={useColorModeValue('gray.500', 'gray.800')} mb={"15px"} 
                 fontWeight="semibold"
                 as="h3"
                 lineHeight="tight"
@@ -97,21 +90,25 @@ import {
             <Flex justifyContent="space-between" alignContent="center">
      <Box alignItems="center"border={"1px solid green"}
       h={"35px"} w={"60px"} fontSize={"xl"} borderRadius={"10px"} 
-      bgColor={"pink"} color={"white"}>
+      bgColor={"orange"} color={"white"}>
         {rat}
+        
       </Box>
               {/* <Rating rating={data.rating} numReviews={data.numReviews} rate={ProductCart.rat}/> */}
-              <Box fontSize="2xl" color={useColorModeValue('black')}fontWeight={"bold"}>
+              <Box fontSize="2xl" color={useColorModeValue('black')}fontWeight={"bold"} 
+              border={"0.5px solid gray"} h={"50px"} w={"80px"} borderRadius={"10px"}>
                 <Box as="span" color={'black'} fontSize="xxl" >
                 ₹
                 </Box>
-                {price}onwards
+                {price}
               </Box>
+              {/* <Link to={`/products/${id}`}>more info</Link> */}
             </Flex>
           </Box>
         </Box>
       </Flex>
       
+       </Link>
     );
   }
   
