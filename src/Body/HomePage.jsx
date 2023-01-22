@@ -3,12 +3,29 @@ import  Fotter  from './FotterPage'
 import React from 'react'
 import { Products } from './ProductPage'
 
+import VideoSlider from './VideoSlider'
+import VideoSl from './VideoSl'
+
 
 
 export const HomePage= () => {
   return (
     <div>
+       <Image h={"200px"} src="https://assets.ajio.com/cms/AJIO/WEB/UHP-D-Urgency74Hrs-LastFewHours-1440x128.jpg"/> 
         
+   <VideoSlider/>
+   <Image h={"100px"}src="https://assets.ajio.com/cms/AJIO/WEB/060123-D-UHP-hiddengems-header.jpg"/>
+
+   <Box display={"flex"} ml={"10px"}>
+<Image w={"310px"} src='https://assets.ajio.com/cms/AJIO/WEB/060123-D-UHP-ethnicwear-jewellery.jpg'/>
+<Image  w={"310px"} src='https://assets.ajio.com/cms/AJIO/WEB/060123-D-UHP-ethnicwear-sarees.jpg'/>
+<Image  w={"310px"} src='https://assets.ajio.com/cms/AJIO/WEB/060123-D-UHP-ethnicwear-men.jpg'/>
+<Image  w={"310px"} src='https://assets.ajio.com/cms/AJIO/WEB/060123-D-UHP-ethnicwear-handbags.jpg'/>
+</Box>
+
+
+    <VideoSl />
+  <Image src="https://assets.ajio.com/cms/AJIO/WEB/060123-D-UHP-gamesonze-scratchcard-GIF.gif"/>
 <Flex alignItems={'center'}  width={800} margin={'auto'} mt={50}>
 
 <Box w={700} h={480} p={35}  borderRadius={"10px"} textAlign={[ 'left']} bg={useColorModeValue('gray.50', 'gray.800')} >
@@ -83,7 +100,7 @@ bgImage="https://thumbs.dreamstime.com/b/design-template-marble-texture-gold-geo
   bgImage="https://images.meesho.com/images/pow/downloadBannerDesktop.webp"
   bgSize={"800px"}
 >
-  <Box  ml={"150px"} p={"20px"} pt={"130px"} h={450} w={650} fontSize={"5xl"} textAlign={"right"} color={"purple"}> 
+  <Box  ml={"150px"} p={"20px"} pt={"130px"} h={450} w={650} fontSize={"5xl"} textAlign={"right"} color={"#F43397"}> 
   Start your Online Business with Zero Investment
 
 <Box display={"flex"} gap={"40px"}  pt={"40px"} pl={"170px"} >
@@ -109,9 +126,9 @@ bgSize={"790px"}
     <Box  display={"flex"} gap={"50px"} pt={"15px"}>
     <br/>
    
-    <Box h={"40px"} w={"250px"} pt={"6px"} border={"0.5px solid white"} borderRadius={"10px"}>Grow Your Business 10x</Box>
-    <Box h={"40px"} w={"180px"} pt={"6px"} border={"0.5px solid white"} borderRadius={"10px"}>Enjoy 100% Profit</Box>
-    <Box h={"40px"} w={"180px"} pt={"6px"} border={"0.5px solid white"} borderRadius={"10px"}>Sell All Over India</Box>
+    <Box h={"40px"} w={"250px"} pt={"6px"} border={"0.5px solid #F43397"} borderRadius={"10px"}>Grow Your Business 10x</Box>
+    <Box h={"40px"} w={"180px"} pt={"6px"} border={"0.5px solid #F43397"} borderRadius={"10px"}>Enjoy 100% Profit</Box>
+    <Box h={"40px"} w={"180px"} pt={"6px"} border={"0.5px solid #F43397"} borderRadius={"10px"}>Sell All Over India</Box>
     </Box>
        
     </Box>
@@ -119,12 +136,20 @@ bgSize={"790px"}
 <br/>
 <br/>
 
+<Box display={"flex"} ml={"10px"}>
+<Image w={"310px"} src='https://assets.ajio.com/cms/AJIO/WEB/060123-D-UHP-discoveronlinestores-trends.jpg'/>
+<Image  w={"310px"} src='https://assets.ajio.com/cms/AJIO/WEB/060123-D-UHP-discoveronlinestores-indie.jpg'/>
+<Image  w={"310px"} src='https://assets.ajio.com/cms/AJIO/WEB/060123-D-UHP-discoveronlinestores-home.jpg'/>
+<Image  w={"310px"} src='https://assets.ajio.com/cms/AJIO/WEB/060123-D-UHP-discoveronlinestores-sneakerhood.jpg'/>
+</Box>
+ 
+ 
 {/* *****************************Products******************************** */}
     {/* <Products/> */}
 
 {/* ******************************Fotter****************************** */}
 
-    <Fotter/>
+    {/* <Fotter/> */}
 
     </div>
   )

@@ -12,7 +12,8 @@ import {
   } from '@chakra-ui/react';
   import { BsStar, BsStarFill, BsStarHalf ,} from 'react-icons/bs';
   import { FiShoppingCart } from 'react-icons/fi';
-  import {Link} from "react-router-dom"
+  import {Link,useParams} from "react-router-dom"
+import Fotter from './FotterPage';
   const data = {
     isNew: true,
     imageURL:
@@ -28,15 +29,16 @@ import {
   function ProductCart({title,price, image,category,rat,id}) {
 
     return (
-       <Link to={`/products/${id}`}>
-
+       
+  <div>
       <Flex p={3} w="full" alignItems="center" justifyContent="center" >
+        <Link to={`/products/${id}`}>
         <Box
           bg={useColorModeValue('white', 'gray.800')}
           w="230px"
           h={"350px"}
-          borderWidth="0.5px"
-          rounded="lg"
+          border="0.5px solid #F43397"
+          rounded="3PX"
           p={"10px"} 
         //   shadow="sm"
           >
@@ -60,7 +62,7 @@ import {
           <Box p="6">
             <Box d="flex" alignItems="baseline">
               {data.isNew && (
-                <Badge rounded="full" px="5" fontSize="0.8em" colorScheme="green" mb={"10px"}>
+                <Badge rounded="full" px="5" fontSize="0.8em" colorScheme="#DDF2DC" mb={"10px"}>
                  {category}
                 </Badge>
               )}
@@ -68,13 +70,15 @@ import {
             <Flex mt="1" justifyContent="space-between" alignContent="center">
               <Box
                 fontSize="m"
-                color={useColorModeValue('gray.500', 'gray.800')} mb={"15px"} 
+                color={useColorModeValue('gray.500', 'gray.100')} mb={"15px"} 
                 fontWeight="semibold"
                 as="h3"
                 lineHeight="tight"
                 isTruncated>
                 {title}
               </Box>
+
+              <Link to="/cart">
               <Tooltip
                 label="Add to cart"
                 bg="white"
@@ -85,18 +89,19 @@ import {
                   <Icon as={FiShoppingCart} h={7} w={7} alignSelf={'center'} />
                 </chakra.a>
               </Tooltip>
+              </Link>
             </Flex>
   
             <Flex justifyContent="space-between" alignContent="center">
      <Box alignItems="center"border={"1px solid green"}
       h={"35px"} w={"60px"} fontSize={"xl"} borderRadius={"10px"} 
-      bgColor={"orange"} color={"white"}>
+      bgColor={"#23BB75"} color={"white"}>
         {rat}
         
       </Box>
               {/* <Rating rating={data.rating} numReviews={data.numReviews} rate={ProductCart.rat}/> */}
-              <Box fontSize="2xl" color={useColorModeValue('black')}fontWeight={"bold"} 
-              border={"0.5px solid gray"} h={"50px"} w={"80px"} borderRadius={"10px"}>
+              <Box fontSize="xl" color={useColorModeValue('black')}fontWeight={"bold"} 
+              >
                 <Box as="span" color={'black'} fontSize="xxl" >
                 ₹
                 </Box>
@@ -106,9 +111,12 @@ import {
             </Flex>
           </Box>
         </Box>
+        </Link>
+        
       </Flex>
       
-       </Link>
+      </div>
+       
     );
   }
   

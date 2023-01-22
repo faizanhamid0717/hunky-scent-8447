@@ -4,6 +4,7 @@ import Navbar from './components/Navebar';
 import { AllRoutes } from './components/AllRoutes';
 // import { Cartpage } from './components/Cartpage';
 
+import Fotter from './Body/FotterPage';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
      
       <Navbar/>
       <AllRoutes/>
-      
+      <Fotter/>
        
     </div>
   );

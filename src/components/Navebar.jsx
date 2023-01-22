@@ -3,12 +3,15 @@ import { FiShoppingCart } from 'react-icons/fi';
 import { Search2Icon,ArrowForwardIcon } from '@chakra-ui/icons'
 import { ReactNode } from 'react';
 import { AllRoutes } from './AllRoutes';
+import logo from "../images/Logos.jpg"
+
+import { useAuth0 } from "@auth0/auth0-react";
 
 import {
   Box,
   Flex,
   Avatar,
- 
+ Image,
   Button,
   Menu,
   MenuButton,
@@ -42,16 +45,23 @@ import { Link } from "react-router-dom";
 export default function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const { loginWithRedirect,isAuthenticated,user } = useAuth0();
+  const { logout } = useAuth0()
   return (
     <>
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}  >
-        <Flex h={16} alignItems={'center'} justifyContent={'space-evenly'} width={1000} margin={'auto'}>
+        <Flex h={16} alignItems={'center'} justifyContent={'space-evenly'} width={1100} margin={'auto'}>
 
-          <Box> <img src="logo.svg"/> </Box>
+          {/* <Box > <Image h={"70px"} w ={"300px"} src={logo}/> </Box> */}
+
+          <Link to="/"> 
+         <Box fontSize={"5xl"} fontWeight={"bold"} color={'#F43397'}>meeshoex</Box>
+         </Link>
 
           {/* ****************************Search Bar*************************************** */}
        <InputGroup>     
-        <Input  width={400} placeholder= "try Sari,Kurta or Search by Product Code" type="text" /> 
+        <Input ml={"10px"} width={380} placeholder= "try Sari,Kurta or Search by Product Code" type="text" /> 
         <InputRightAddon children={<Search2Icon/>} />
        </InputGroup>   
  
@@ -60,18 +70,28 @@ export default function Navbar() {
 
 {/* *****************************Download*************************************** */}
           <Menu>
-  <MenuButton as={Button} >
+  <MenuButton as={Button} mr={"30px"} color={'gray.500'} >
     Download App
   </MenuButton>
   <MenuList>
-    <MenuItem>Download From</MenuItem>
+    <MenuItem >Download From</MenuItem>
     {/* <MenuItem>Create a Copy</MenuItem> */}
     <MenuItem><img width ="200px" src ="https://images.meesho.com/images/pow/playstore-icon-big.webp"/></MenuItem>
     <MenuItem><img width ="200px" src ="https://images.meesho.com/images/pow/appstore-icon-big.webp"/></MenuItem>
   </MenuList>
 </Menu>
 {/* 8******************************************************************************* */}
-          <Box><Text>Become a Supplier</Text> </Box>
+
+   { isAuthenticated ? (
+     <Box ml={"20px"} ><Button   color={'gray.500'} onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
+     Log Out
+   </Button></Box>
+   ) :(
+    <Box mr={"20px"}><Button  color={'gray.500'}  onClick={() => loginWithRedirect()}>Log In</Button></Box>
+   )}
+      
+     
+
 
           <Flex alignItems={'center'}>
           
@@ -87,7 +107,8 @@ export default function Navbar() {
                   variant={'link'}
                   cursor={'pointer'}
                   minW={0}>
-                  <Box><Text>Profile</Text></Box>
+                  <Box
+                  mr={"30px"}><Text>Profile</Text></Box>
 
                 </MenuButton>
                 <MenuList alignItems={'center'}>
@@ -100,23 +121,24 @@ export default function Navbar() {
                   </Center>
                   <br />
                   <Center>
-                    <p>Hello User</p> 
+                    <p >Hello User</p> 
                     
                   </Center>
-                  <p>11110000000</p>
+                  <p >{isAuthenticated && <p >{user.name}</p>}</p>
 
                   <br />
                   <MenuDivider />
                   
+                 
                   <MenuItem>My Orders</MenuItem>
-                  <MenuItem> Logout</MenuItem>
+                 
                 </MenuList>
 
                 <Box
                 label="Add to cart"
-                bg="white"
+               
                 placement={'top'}
-                color={'gray.800'}
+                color={'gray.500'}
                 fontSize={'1.2em'}>
                 {/* <chakra.a href={'#'} display={'flex'}> */}
 
@@ -137,14 +159,14 @@ export default function Navbar() {
         </Flex>
       </Box>
 
-
+{/* <br/> */}
       {/* **************************************Drop down nave****************************** */}
-     <Divider border={"1px solid pink"}/>
+     {/* <Divider mt={"5px"} border={"1px solid #F43397"}/> */}
 
       <Box bg={useColorModeValue('gray.50', 'gray.800')} px={4} h={12}>
       
   <Link to="/products"> 
-  <Button rightIcon={<ArrowForwardIcon />} colorScheme='teal' variant='outline'>
+  <Button rightIcon={<ArrowForwardIcon />} color='#F43397' variant='outline' border={'0.5px solid #F43397'}>
     Products For You
   </Button>
   </Link>
@@ -243,8 +265,10 @@ export default function Navbar() {
 </Menu> 
 
 
+<Divider />
+<Divider />
+<Divider border={"1px solid #F43397"}/>
 
-<Divider border={"1px solid red"}/>
       </Box>
       
       {/* <AllRoutes/> */}

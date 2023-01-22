@@ -31,15 +31,15 @@ useEffect(()=>{
   return (
     <div>
         {/* <Link to='/products'></Link> */}
-        <Heading>Products For You</Heading>
+        {/* <Heading>Products For You</Heading> */}
          
         <Divider border={"0.5px solid gray.600"} mt={"15px"} mb={"15px"}/>
 
 <Box w={"1100px"} h={"100%"}  ml={"100px"} display={"grid"} gridTemplateColumns={"repeat(2,0px)"} >
 
- <Box w={"350px"} h={"820px"}  border={"1px solid gray"} borderRadius={"10px"} > <SortFilter/> </Box>
+ <Box w={"350px"} h={"820px"}  border={"1px solid #E7EEFF"} borderRadius={"10px"} > <SortFilter/> </Box>
 
-<Box w={"700px"} h={"100%"} border={"1px solid gray"} ml={"400px"} borderRadius={"10px"}> 
+<Box w={"700px"} h={"100%"} border={"1px solid #E7EEFF"} ml={"400px"} borderRadius={"10px"}> 
     <Grid gridTemplateColumns="repeat(3,230px)">
     
         {data ?.map ((ele)=>

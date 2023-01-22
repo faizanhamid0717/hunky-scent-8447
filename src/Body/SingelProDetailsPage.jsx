@@ -25,68 +25,17 @@ import {
 import { useState,useEffect } from 'react';
  import axios from "axios"
 import { useParams } from 'react-router-dom';
-// import {Link} from 
 
 
-//   const initialstate={
-//     product:[],
-//     isLoading:true,
-//     isError:""
-// }
 
-// const reducer=(state,action)=>{
-//     // console.log("state" ,state)
-//     // console.log("statement",action.payload)
-//        switch (action.type){
-//         case "FETCH-SUCCESS":
-//             return {
-//                 ...state,
-//                 product : action.payload,
-//                 isloading:false,
-//                 isError:false
-//             }
-//         case "FETCH-UNSUCCESSFUL":
-//             return{
-               
-//                 product:[],
-//                 isLoading : false,
-//                 isError:"some thing went wrong"
-
-//             }
-//             default:
-//                 throw new Error()
-//        }
-// }
-  
-  
-//    function ProductDetail(){
-
-//     const [data,setData]=useState([])
-//   //  const {isLoading,isError,product}=state
-//    
-//   //  const {image,title,discription,price,rating,category}=product
-
-//    const getData=async ()=>{
-     
-//         axios.get(`https://fakestoreapi.com/products/${id}`)
-//     .then((res)=>{
-//          console.log(res.data)
-//          setData(res.data)
-//     })
-//     .catch((error)=>{
-//       console.log(error)
-//     })
-// }
-
-// useEffect(()=>{
-//     getData()
-// },[id])
-
-
-export const  ProductDetail = ({image,title,discription,price,rating,category,id}) => {
+export const  ProductDetail = () => {
   const [data,setData]=useState([])
-  const param=useParams(id)
-  // console.log(param)
+  // const [cart,setCart]=useState([])
+
+  // console.log(cart)
+
+  const {id}=useParams()
+  console.log(id)
 
 const getData=(id)=>{
   return(
@@ -102,32 +51,44 @@ const getData=(id)=>{
   
 }
 
+// const handelClick=(()=>{
+//   setCart([...cart,{id,title ,price}])
+// });
+
 useEffect(()=>{
-  getData(param.id)
-},[param.id])
+  getData(id)
+},[id])
 
+// const handelClick=()=>{
+//   setCart([...cart,{id,price,title}])
+// }
+
+ const{image,title,price,description
+ }=data
     return (
-
-       
+    
+      <div>
+        {/* <h1>Singel Product Page</h1> */}
       <Container maxW={'7xl'}>
-        {/* <Link to="/products"></Link> */}
-
-        <Heading>Singel</Heading>
-
         <SimpleGrid
           columns={{ base: 1, lg: 2 }}
           spacing={{ base: 8, md: 10 }}
           py={{ base: 18, md: 24 }}>
           <Flex>
+          
             <Image
+            border={"1px solid gray"}
+            p={"40px"}
               rounded={'md'}
-              // alt={'image'}
+              alt={'product image'}
+              // src={
+              //   'https://images.unsplash.com/photo-1596516109370-29001ec8ec36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyODE1MDl8MHwxfGFsbHx8fHx8fHx8fDE2Mzg5MzY2MzE&ixlib=rb-1.2.1&q=80&w=1080'
+              // }
               src={image}
-              
               fit={'cover'}
               align={'center'}
-              w={'100%'}
-              h={{ base: '100%', sm: '400px', lg: '500px' }}
+              w={'100%'} h={"80%"}
+              // h={{ base: '100%', sm: '400px', lg: '500px' }}
             />
           </Flex>
           <Stack spacing={{ base: 6, md: 10 }}>
@@ -135,14 +96,15 @@ useEffect(()=>{
               <Heading
                 lineHeight={1.1}
                 fontWeight={600}
-                fontSize={{ base: '2xl', sm: '4xl', lg: '5xl' }}>
-              Title : {title}
+                fontSize={{ base: '1xl', sm: '2xl', lg: '1xl' }}>
+                {/* Automatic Watch */}
+                {title}
               </Heading>
               <Text
                 color={useColorModeValue('gray.900', 'gray.400')}
                 fontWeight={300}
-                fontSize={'2xl'}>
-                Price : {price}
+                fontSize={'5xl'}>
+                Price : ₹ {price}
               </Text>
             </Box>
   
@@ -157,38 +119,22 @@ useEffect(()=>{
               <VStack spacing={{ base: 4, sm: 6 }}>
                 <Text
                   color={useColorModeValue('gray.500', 'gray.400')}
-                  fontSize={'2xl'}
+                  fontSize={'1xl'}
                   fontWeight={'300'}>
-                 Category :  {category}
+                  
+                  {description}
                 </Text>
-                <Text fontSize={'lg'}>
-                 {discription}
-                </Text>
+               
               </VStack>
               <Box>
-                <Text
-                  fontSize={{ base: '16px', lg: '18px' }}
-                  color={useColorModeValue('yellow.500', 'yellow.300')}
-                  fontWeight={'500'}
-                  textTransform={'uppercase'}
-                  mb={'4'}>
-                Rating : {rating}
-                </Text>
+                
   
-                  <Image src="https://images.meesho.com/images/marketing/1588578650850.webp"/>
-               
+                <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
+                  
+                 <Image h={"150px"} w={"1000px"} src="https://images.meesho.com/images/marketing/1588578650850.webp"/>
+                </SimpleGrid>
               </Box>
-              <Box>
-                <Text
-                  fontSize={{ base: '16px', lg: '18px' }}
-                  color={useColorModeValue('yellow.500', 'yellow.300')}
-                  fontWeight={'500'}
-                  textTransform={'uppercase'}
-                  mb={'4'}>
-                 
-                </Text>
-  
-              </Box>
+              
             </Stack>
   
             <Button
@@ -203,19 +149,21 @@ useEffect(()=>{
               _hover={{
                 transform: 'translateY(2px)',
                 boxShadow: 'lg',
-              }}>
-              Add to cart
+              }} >
+                
+             Add To Cart
             </Button>
   
             <Stack direction="row" alignItems="center" justifyContent={'center'}>
-             
+            
               <Text>2-3 business days delivery</Text>
             </Stack>
           </Stack>
         </SimpleGrid>
       </Container>
+      </div>
+    );
     
-    )
   }
 
   export default ProductDetail
