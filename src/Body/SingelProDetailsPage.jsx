@@ -19,13 +19,13 @@ import {
     VisuallyHidden,
     List,
     ListItem,
-    Link,
+    
     
   } from '@chakra-ui/react';
 import { useState,useEffect } from 'react';
  import axios from "axios"
 import { useParams } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 
 
 export const  ProductDetail = () => {
@@ -39,7 +39,7 @@ export const  ProductDetail = () => {
 
 const getData=(id)=>{
   return(
-      axios.get(`https://fakestoreapi.com/products/${id}`)
+      axios.get(`http://localhost:8080/Add/${id}`)
       .then((res)=>{
           console.log(res.data)
           setData(res.data)
@@ -137,13 +137,14 @@ useEffect(()=>{
               
             </Stack>
   
+     <Link to="/cart">
             <Button
               rounded={'none'}
               w={'full'}
               mt={8}
               size={'lg'}
               py={'7'}
-              bg={useColorModeValue('gray.900', 'gray.50')}
+              bg={useColorModeValue("#F43397")}
               color={useColorModeValue('white', 'gray.900')}
               textTransform={'uppercase'}
               _hover={{
@@ -153,7 +154,7 @@ useEffect(()=>{
                 
              Add To Cart
             </Button>
-  
+      </Link>
             <Stack direction="row" alignItems="center" justifyContent={'center'}>
             
               <Text>2-3 business days delivery</Text>

@@ -1,5 +1,5 @@
 import { Box ,Text,Select,useColorModeValue, Divider, Image} from '@chakra-ui/react'
-import React from 'react'
+import React, { useState } from 'react'
 import {
     Menu,
     MenuButton,
@@ -15,17 +15,40 @@ import {
   } from '@chakra-ui/react'
   import { ChevronDownIcon } from '@chakra-ui/icons'
 
-  
-export const SortFilter = () => {
- 
+  // const handelSort = () => {
+  //   const [state,setState]=React.useState([])
 
+  //   let selected= [...this.data.price];
+  //   if (selected === 'asc') {
+  //     data.sort((a, b) => a.price - b.price);
+  //   } else {
+  //     data.sort((a, b) => b.price - a.price);
+  //   }
+  //   this.setState({ data })
+
+  //   return (
+  //     <div>
+  //     {this.data.price.map((ele) => (
+  //       <li key={ele.id}>{ele.title} - ${ele.price}</li>
+  //     ))}
+  //     </div>
+  //   )
+  
+  // }
+
+
+
+
+export const SortFilter = () => {
+  const [order,setOrder]=useState("")
+  const sort="price"
   return (
     <div>
      <Text fontSize={"xl"} mr={"230px"} >Sort By :</Text>
         <Select w={"300px"} h={"50px"} ml={"22px"} color={useColorModeValue('gray.900', 'gray.900')} placeholder={"--"}> 
 
-            <option><Button >Price (High to Low)</Button></option>
-            <option><Button >Price (Low to High)</Button></option>
+            <option><Button value ="dsec" onClick={()=>setOrder("desc")}>Price (High to Low)</Button></option>
+            <option><Button value="asc" onClick={()=>setOrder("asc")}>Price (Low to High)</Button></option>
 
         </Select>
 
@@ -40,17 +63,12 @@ export const SortFilter = () => {
 <Menu>
     <MenuButton as={Button} bg={useColorModeValue('gray.100', 'gray.800')}
      fontSize={"xl"} mr={"230px"} 
-      w={"300px"} h={"60px"} ml={"20px"}>
+      w={"300px"} h={"60px"} ml={"20px"} border={"0.5px solid gray"}>
      Gender  <ChevronDownIcon ml={"160px"}/>
     </MenuButton>
   <MenuList >
-    <MenuItem color={"red"}>Sarees</MenuItem>  
-    <MenuItem>All Sarees </MenuItem>
-    <MenuItem>Silk Sarees </MenuItem>
-    <MenuItem>Cotton Sarees</MenuItem>
-    <MenuItem>Chiffon Sarees</MenuItem>
-    
-    <MenuItem color={"red"}>Kurtis</MenuItem>
+    <MenuItem> <Button>Girls </Button></MenuItem>  
+    <MenuItem> <Button>Boys </Button></MenuItem>
   </MenuList>
 </Menu>
        
@@ -59,17 +77,17 @@ export const SortFilter = () => {
 <Menu>
     <MenuButton as={Button} bg={useColorModeValue('gray.100', 'gray.800')}
      fontSize={"xl"} mr={"230px"} 
-     w={"300px"} h={"60px"} ml={"20px"}>
+     w={"300px"} h={"60px"} ml={"20px"} border={"0.5px solid gray"}> 
      Color  <ChevronDownIcon ml={"160px"}/>
     </MenuButton>
   <MenuList >
-    <MenuItem color={"red"}>Sarees</MenuItem>  
-    <MenuItem>All Sarees </MenuItem>
-    <MenuItem>Silk Sarees </MenuItem>
-    <MenuItem>Cotton Sarees</MenuItem>
-    <MenuItem>Chiffon Sarees</MenuItem>
-    
-    <MenuItem color={"red"}>Kurtis</MenuItem>
+  <MenuItem> <Button>Black </Button></MenuItem> 
+  <MenuItem> <Button>Brown</Button></MenuItem> 
+  <MenuItem> <Button>Grey </Button></MenuItem> 
+  <MenuItem> <Button>Maroon </Button></MenuItem> 
+  <MenuItem> <Button>Khaki </Button></MenuItem> 
+  <MenuItem> <Button>Blue </Button></MenuItem> 
+  <MenuItem> <Button>Olive </Button></MenuItem> 
   </MenuList>
 </Menu>
 
@@ -78,17 +96,17 @@ export const SortFilter = () => {
 <Menu>
     <MenuButton as={Button} bg={useColorModeValue('gray.100', 'gray.800')}
      fontSize={"xl"} mr={"230px"} 
-     w={"300px"} h={"60px"} ml={"20px"}>
+     w={"300px"} h={"60px"} ml={"20px"} border={"0.5px solid gray"}>
      Price <ChevronDownIcon ml={"160px"}/>
     </MenuButton>
   <MenuList >
-    <MenuItem color={"red"}>Sarees</MenuItem>  
-    <MenuItem>All Sarees </MenuItem>
-    <MenuItem>Silk Sarees </MenuItem>
-    <MenuItem>Cotton Sarees</MenuItem>
-    <MenuItem>Chiffon Sarees</MenuItem>
-    
-    <MenuItem color={"red"}>Kurtis</MenuItem>
+  <MenuItem> <Button>Under   ₹ 149</Button></MenuItem> 
+  <MenuItem> <Button>Under   ₹ 199</Button></MenuItem> 
+  <MenuItem> <Button>Under   ₹ 249</Button></MenuItem> 
+  <MenuItem> <Button>Under   ₹ 399</Button></MenuItem> 
+  <MenuItem> <Button>Under   ₹ 499 </Button></MenuItem> 
+  <MenuItem> <Button>Under   ₹ 999 </Button></MenuItem> 
+
   </MenuList>
 </Menu>
 
@@ -96,54 +114,47 @@ export const SortFilter = () => {
 <Menu>
     <MenuButton as={Button} bg={useColorModeValue('gray.100', 'gray.800')}
      fontSize={"xl"} mr={"230px"} 
-      w={"300px"} h={"60px"} ml={"20px"}>
+      w={"300px"} h={"60px"} ml={"20px"} border={"0.5px solid gray"}>
      Rating  <ChevronDownIcon ml={"160px"}/>
     </MenuButton>
   <MenuList >
-    <MenuItem color={"red"}>Sarees</MenuItem>  
-    <MenuItem>All Sarees </MenuItem>
-    <MenuItem>Silk Sarees </MenuItem>
-    <MenuItem>Cotton Sarees</MenuItem>
-    <MenuItem>Chiffon Sarees</MenuItem>
+    <MenuItem >2.0 and above</MenuItem>  
+    <MenuItem>3.0 and above </MenuItem>
+    <MenuItem>3.5 and above </MenuItem>
+    <MenuItem>4.0 and above</MenuItem>
+    <MenuItem>M-Trusted</MenuItem>
     
-    <MenuItem color={"red"}>Kurtis</MenuItem>
   </MenuList>
 </Menu>
 
 <Divider border={"0.5px solid gray.600"} mt={"15px"} mb={"15px"}/>
 
 <Menu>
-    <MenuButton as={Button} bg={useColorModeValue('gray.100', 'gray.800')}
+    <MenuButton as={Button} 
      fontSize={"xl"} mr={"230px"} 
-      w={"300px"} h={"60px"} ml={"20px"}>
+      w={"300px"} h={"60px"} ml={"20px"} border={"0.5px solid gray"}>
      Material  <ChevronDownIcon ml={"160px"}/>
     </MenuButton>
   <MenuList >
-    <MenuItem color={"red"}>Sarees</MenuItem>  
-    <MenuItem>All Sarees </MenuItem>
-    <MenuItem>Silk Sarees </MenuItem>
-    <MenuItem>Cotton Sarees</MenuItem>
-    <MenuItem>Chiffon Sarees</MenuItem>
-    
-    <MenuItem color={"red"}>Kurtis</MenuItem>
+    <MenuItem >Print Or Patten Type</MenuItem>  
+    <MenuItem>Bottom Pattern Type </MenuItem>
+    <MenuItem>Surface styling </MenuItem>
   </MenuList>
 </Menu>
 
 <Divider border={"0.5px solid gray.600"} mt={"15px"} mb={"15px"}/>
 <Menu>
-    <MenuButton as={Button} bg={useColorModeValue('gray.100', 'gray.800')}
+    <MenuButton as={Button} 
      fontSize={"xl"} mr={"230px"} 
-      w={"300px"} h={"60px"} ml={"20px"}>
+      w={"300px"} h={"60px"} ml={"20px"} border={"0.5px solid gray"}>
      Brand  <ChevronDownIcon ml={"160px"}/>
     </MenuButton>
   <MenuList >
-    <MenuItem color={"red"}>Sarees</MenuItem>  
-    <MenuItem>All Sarees </MenuItem>
-    <MenuItem>Silk Sarees </MenuItem>
-    <MenuItem>Cotton Sarees</MenuItem>
-    <MenuItem>Chiffon Sarees</MenuItem>
-    
-    <MenuItem color={"red"}>Kurtis</MenuItem>
+    <MenuItem >H & M</MenuItem>  
+    <MenuItem>Puma </MenuItem>
+    <MenuItem>Tommy Helifer</MenuItem>
+    <MenuItem>Roadister</MenuItem>
+    <MenuItem>Abof</MenuItem>
   </MenuList>
 </Menu>
 
@@ -152,17 +163,12 @@ export const SortFilter = () => {
 <Menu>
     <MenuButton as={Button} bg={useColorModeValue('gray.100', 'gray.800')}
      fontSize={"xl"} mr={"230px"} 
-      w={"300px"} h={"60px"} ml={"20px"}>
+      w={"300px"} h={"60px"} ml={"20px"} border={"0.5px solid gray"}>
      Category  <ChevronDownIcon ml={"160px"}/>
     </MenuButton>
   <MenuList >
-    <MenuItem color={"red"}>Sarees</MenuItem>  
-    <MenuItem>All Sarees </MenuItem>
-    <MenuItem>Silk Sarees </MenuItem>
-    <MenuItem>Cotton Sarees</MenuItem>
-    <MenuItem>Chiffon Sarees</MenuItem>
+    <MenuItem >Dresses</MenuItem>  
     
-    <MenuItem color={"red"}>Kurtis</MenuItem>
   </MenuList>
 </Menu>
 

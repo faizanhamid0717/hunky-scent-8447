@@ -45,7 +45,7 @@ export const HomePage= () => {
   </Box> 
 </Box>
 <br/>
-<Button bg={'pink'} w={"350px"} h={"50px"}>Download The Meeshoex App</Button>
+<Button bg={'#F43397'} w={"350px"} h={"50px"} color={"white"} fontSize={"xl"}>Download The Meeshoex App</Button>
  </Box>
  
   <Spacer />
@@ -77,7 +77,7 @@ export const HomePage= () => {
 <Box ml={"240px"}  h={550} w={800} p={"30px"} 
 bgImage="https://thumbs.dreamstime.com/b/design-template-marble-texture-gold-geometric-frame-abstract-golden-background-set-vector-elegant-black-brochure-141784390.jpg"
 >
-<Heading pl={"200px"} fontSize={"6xl"} fontStyle={"Open sans"}>Fashion Store</Heading>
+<Heading pl={"200px"} fontSize={"6xl"} fontFamily={"Cursive"} color={"#F43397"}>Fashion Store</Heading>
 
 <Box display={"flex"} gap={"15px"} >
 <Box  h={280} w={250}>

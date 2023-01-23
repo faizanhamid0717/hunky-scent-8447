@@ -37,7 +37,7 @@ import Fotter from './FotterPage';
           bg={useColorModeValue('white', 'gray.800')}
           w="230px"
           h={"350px"}
-          border="0.5px solid #F43397"
+          border="0.5px solid #E7EEFF"
           rounded="3PX"
           p={"10px"} 
         //   shadow="sm"

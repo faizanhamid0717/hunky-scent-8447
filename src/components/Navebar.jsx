@@ -53,8 +53,8 @@ export default function Navbar() {
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}  >
         <Flex h={16} alignItems={'center'} justifyContent={'space-evenly'} width={1100} margin={'auto'}>
 
-          {/* <Box > <Image h={"70px"} w ={"300px"} src={logo}/> </Box> */}
-
+          <Box > <Image h={"35px"} w ={"100px"} mt={"20px"}src="https://th.bing.com/th?id=ODLS.416e21d2-89d8-43b8-8ab8-2db69d72773e&w=32&h=32&o=6&pid=13.1"/> </Box>
+       
           <Link to="/"> 
          <Box fontSize={"5xl"} fontWeight={"bold"} color={'#F43397'}>meeshoex</Box>
          </Link>
@@ -70,7 +70,7 @@ export default function Navbar() {
 
 {/* *****************************Download*************************************** */}
           <Menu>
-  <MenuButton as={Button} mr={"30px"} color={'gray.500'} >
+  <MenuButton as={Text} mr={"30px"} color={'gray.500'} >
     Download App
   </MenuButton>
   <MenuList>
@@ -172,102 +172,124 @@ export default function Navbar() {
   </Link>
   
 <Menu>
-    <MenuButton as={Button} bg={0}>
+    <MenuButton as={Button} bg={0} color='#F43397'>
      Women Ethnic
     </MenuButton>
   <MenuList >
-    <MenuItem color={"red"}>Sarees</MenuItem>  
+    <MenuItem color={"#F43397"}>Sarees</MenuItem>  
     <MenuItem>All Sarees </MenuItem>
     <MenuItem>Silk Sarees </MenuItem>
     <MenuItem>Cotton Sarees</MenuItem>
     <MenuItem>Chiffon Sarees</MenuItem>
     
-    <MenuItem color={"red"}>Kurtis</MenuItem>
+    <MenuItem color={"#F43397"}>Kurtis</MenuItem>
+    <MenuItem>All Kurtis </MenuItem>
+    <MenuItem>Rayon Kurtis </MenuItem>
+    <MenuItem>Cotton Kurtis</MenuItem>
+    
   </MenuList>
 </Menu>
 
 <Menu>
-  <MenuButton as={Button} bg={0}>
+  <MenuButton as={Button} bg={0} color='#F43397'>
    Women Western
   </MenuButton>
   <MenuList>
-    <MenuItem>Download</MenuItem>
-    <MenuItem>Create a Copy</MenuItem>
-    <MenuItem>Mark as Draft</MenuItem>
-    <MenuItem>Delete</MenuItem>
-    <MenuItem>Attend a Workshop</MenuItem>
+    <MenuItem color={"#F43397"}>Topwear</MenuItem>
+    <MenuItem>Tops</MenuItem>
+    <MenuItem>Dresses</MenuItem>
+    <MenuItem color={"#F43397"}>Bottemwear</MenuItem>
+    <MenuItem>Jeans</MenuItem>
+    <MenuItem>Shorts</MenuItem>
+    <MenuItem>Skirts</MenuItem>
+    <MenuItem color={"#F43397"}>Sleepwear</MenuItem>
+    <MenuItem>Babbydolls</MenuItem>
+    <MenuItem>Nightsuits</MenuItem>
   </MenuList>
 </Menu>
 
 <Menu>
-  <MenuButton as={Button} bg={0}>
+  <MenuButton as={Button} bg={0} color='#F43397'>
     Mens
   </MenuButton>
   <MenuList>
-    <MenuItem>Download</MenuItem>
-    <MenuItem>Create a Copy</MenuItem>
-    <MenuItem>Mark as Draft</MenuItem>
-    <MenuItem>Delete</MenuItem>
-    <MenuItem>Attend a Workshop</MenuItem>
+    <MenuItem color={"#F43397"}>Topwear</MenuItem>
+    <MenuItem>Tshirts</MenuItem>
+    <MenuItem>Shirts</MenuItem>
+    <MenuItem color={"#F43397"}>Bottomwear</MenuItem>
+    <MenuItem>Track Pants</MenuItem>
+    <MenuItem>Trousers</MenuItem>
+    <MenuItem>Jeans</MenuItem>
   </MenuList>
 </Menu>
 
 <Menu>
-  <MenuButton as={Button} bg={0}>
+  <MenuButton as={Button} bg={0} color='#F43397'>
    Kids
   </MenuButton>
   <MenuList>
-    <MenuItem>Download</MenuItem>
-    <MenuItem>Create a Copy</MenuItem>
-    <MenuItem>Mark as Draft</MenuItem>
-    <MenuItem>Delete</MenuItem>
-    <MenuItem>Attend a Workshop</MenuItem>
+    <MenuItem color={"#F43397"}>Boys & Girls 2+ Years</MenuItem>
+    <MenuItem>Dresses</MenuItem>
+    <MenuItem color={"#F43397"}>Infant 0-2 Years</MenuItem>
+    <MenuItem >Rompers</MenuItem>
+    <MenuItem color={"#F43397"}>Babby Care</MenuItem>
+    <MenuItem >All Baby Care</MenuItem>
   </MenuList>
 </Menu>
 
 <Menu>
-  <MenuButton as={Button} bg={0}>
+  <MenuButton as={Button} bg={0} color='#F43397'>
    Home & Kitchen
   </MenuButton>
   <MenuList>
-    <MenuItem>Download</MenuItem>
-    <MenuItem>Create a Copy</MenuItem>
-    <MenuItem>Mark as Draft</MenuItem>
-    <MenuItem>Delete</MenuItem>
-    <MenuItem>Attend a Workshop</MenuItem>
+    <MenuItem color={"#F43397"}>Home Decor</MenuItem>
+    <MenuItem>Stickers</MenuItem>
+    <MenuItem>Clocks</MenuItem>
+    <MenuItem color={"#F43397"}>Kitchen & Dining</MenuItem>
+    <MenuItem>Kitchen storage</MenuItem>
+    <MenuItem>Cookware & Bakewear</MenuItem>
   </MenuList>
 </Menu>
 
 <Menu>
-  <MenuButton as={Button} bg={0}>
+  <MenuButton as={Button} bg={0} color='#F43397'>
     Beautiful & Health
   </MenuButton>
   <MenuList>
-    <MenuItem>Download</MenuItem>
-    <MenuItem>Create a Copy</MenuItem>
-    <MenuItem>Mark as Draft</MenuItem>
-    <MenuItem>Delete</MenuItem>
-    <MenuItem>Attend a Workshop</MenuItem>
+    <MenuItem color={"#F43397"}>Make Up</MenuItem>
+    <MenuItem>Face</MenuItem>
+    <MenuItem>Eyes</MenuItem>
+    <MenuItem>Lips</MenuItem>
+    <MenuItem color={"#F43397"}>Wellness</MenuItem>
+    <MenuItem>Oralcare</MenuItem>
+    <MenuItem>Sanitizers</MenuItem>
+    <MenuItem color={"#F43397"}>Skincare</MenuItem>
+    <MenuItem>Deadorants</MenuItem>
   </MenuList>
 </Menu>
 
 <Menu>
-  <MenuButton as={Button} bg={0}>
-    Bag & Footwear Electronic
+  <MenuButton as={Button} bg={0} color='#F43397'>
+    Bag & Footwear 
   </MenuButton>
   <MenuList>
-    <MenuItem>Download</MenuItem>
-    <MenuItem>Create a Copy</MenuItem>
-    <MenuItem>Mark as Draft</MenuItem>
-    <MenuItem>Delete</MenuItem>
-    <MenuItem>Attend a Workshop</MenuItem>
+    <MenuItem color={"#F43397"}>Women Bags</MenuItem>
+    <MenuItem>Handbags</MenuItem>
+    <MenuItem>Slingbags</MenuItem>
+    <MenuItem color={"#F43397"}>Men Bags</MenuItem>
+    <MenuItem>All Men Bags</MenuItem>
+    <MenuItem color={"#F43397"}>Men Footwear</MenuItem>
+    <MenuItem >Sports Shoes</MenuItem>
+    <MenuItem >Formal shoes</MenuItem>
+    <MenuItem color={"#F43397"}>Women Footwear</MenuItem>
+    <MenuItem>Flats</MenuItem>
+    <MenuItem>Juttis</MenuItem>
   </MenuList>
 </Menu> 
 
 
-<Divider />
-<Divider />
-<Divider border={"1px solid #F43397"}/>
+
+<Divider border={"0.5px solid gray"}/>
 
       </Box>
       

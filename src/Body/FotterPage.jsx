@@ -10,6 +10,7 @@ import {
   Stack,
   Text,
   useColorModeValue,
+  Image,
   
 } from '@chakra-ui/react';
 
@@ -52,7 +53,8 @@ export default function Fotter() {
           <Stack spacing={6}>
             <Box>
               {/* <Logo color={useColorModeValue('gray.700', 'white')} /> */}
-              <Box fontSize={"5xl"} fontWeight={"bold"} color={'#F43397'}>meeshoex</Box>
+  {/* <Box >  </Box> */}
+              <Box fontSize={"5xl"} fontWeight={"bold"} color={'#F43397'}>meeshoex <Image h={"50px"} w ={"50px"} ml={"150px"}src="https://th.bing.com/th?id=ODLS.416e21d2-89d8-43b8-8ab8-2db69d72773e&w=32&h=32&o=6&pid=13.1"/></Box>
             </Box>
             <Text fontSize={'sm'}>
               © Trusted by more than 1 Crore Indians

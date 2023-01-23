@@ -2,7 +2,7 @@ import { useState } from 'react'
 import React from 'react'
 import { useEffect } from 'react'
 import axios from "axios"
-import { Grid, GridItem ,Box,useColorModeValue, Heading,Divider,Link} from '@chakra-ui/react'
+import { Grid, GridItem ,Box,useColorModeValue, Image,Divider,Link} from '@chakra-ui/react'
 import ProductCart from './ProductCard'
 import { SortFilter } from './SortFilterPage'
 
@@ -12,7 +12,7 @@ export const Products = () => {
 
 const getData=()=>{
     return(
-        axios.get(`https://fakestoreapi.com/products`)
+        axios.get(`http://localhost:8080/Add`)
         .then((res)=>{
             console.log(res.data)
             setData(res.data)
@@ -34,7 +34,7 @@ useEffect(()=>{
         {/* <Heading>Products For You</Heading> */}
          
         <Divider border={"0.5px solid gray.600"} mt={"15px"} mb={"15px"}/>
-
+ <Image src="https://assets.ajio.com/cms/AJIO/WEB/060123-D-UHP-home-header.jpg"/>
 <Box w={"1100px"} h={"100%"}  ml={"100px"} display={"grid"} gridTemplateColumns={"repeat(2,0px)"} >
 
  <Box w={"350px"} h={"820px"}  border={"1px solid #E7EEFF"} borderRadius={"10px"} > <SortFilter/> </Box>
